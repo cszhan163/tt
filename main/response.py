@@ -5,7 +5,7 @@ import re
 from main import app
 #from .models import set_user_info, get_user_student_info, get_user_library_info
 from .utils import AESCipher, init_wechat_sdk
-
+from .plugins.state import set_user_state
 
 def wechat_response(data):
     """微信消息处理回复"""
