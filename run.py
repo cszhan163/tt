@@ -6,5 +6,5 @@ from main import networkutil
 if __name__ == "__main__":
     app.debug = app.config['DEBUG']
     ip = networkutil.getnetworkip()
-    app.config['MAIN_URL']="http://"+ip+"/"
+    #sapp.config['MAIN_URL']="http://"+ip+"/"
     app.run(ip)
