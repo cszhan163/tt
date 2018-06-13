@@ -28,9 +28,9 @@ def handle_wechat_request():
 def printer_airkiss(openid=None):
     """"""
     if request.method == 'GET':
+        print("start airkiss!!")
         jsapi = get_jsapi_signature_data(request.url)
         #jsapi['jsApiList'] = ['hideAllNonBaseMenuItem']
-        jspai['beta'] = true
         jsapi['jsApiList'] = [
           'checkJsApi',
           'openWXDeviceLib',
@@ -41,9 +41,15 @@ def printer_airkiss(openid=None):
           'disconnectWXDevice',
           'configWXDeviceWiFi',
         ]
-        return render_template('printerAirkiss.html',
+        jsapi['beta'] = 'true'
+        static_full_url = request.host_url +"static"
+        print(static_full_url)
+        print(jsapi)
+        #return render_template('test.html')
+        return render_template('printerairkiss.html',
                                title=u'打印机设置',
                                desc=u'设置打印机的wifi连接',
+                               static_url=static_full_url,
                                jsapi=Markup(jsapi))
     else:
         abort(404)

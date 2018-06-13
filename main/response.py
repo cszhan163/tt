@@ -56,7 +56,7 @@ def text_resp():
     commands = {
         u'取消': cancel_command,
         u'^\?|^？': all_command,
-        u'^wifi|^WIFI|^配置': airkiss_command,
+        u'^wifi|^WIFI|^配置': printer_airkiss_command,
 
         u'^绑定|^綁定': auth_url,
         u'更新菜单': update_menu_setting
@@ -263,7 +263,7 @@ def phone_number():
     content = app.config['PHONE_NUMBER_TEXT'] + app.config['HELP_TEXT']
     return wechat.response_text(content)
 
-def printer_airkiss():
+def printer_airkiss_command():
     """代开airkiss 页面"""
     airkissURL = app.config['HOST_URL']+"/wechat/printer/airkiss"
     content = app.config['AIRKISS_URL_TXT'].fromat(airkissURL)

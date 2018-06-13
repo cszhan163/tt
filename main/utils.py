@@ -63,7 +63,7 @@ def init_wechat_sdk():
         redis.set("wechat:jsapi_ticket", jsapi_ticket['jsapi_ticket'], 7000)
         redis.set("wechat:jsapi_ticket_expires_at",
                   jsapi_ticket['jsapi_ticket_expires_at'], 7000)
-
+    
     return wechat
 
 

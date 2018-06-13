@@ -3,11 +3,19 @@
   <meta charset="utf-8">
   <title>PrinterAirkiss</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body ontouchstart="">
-<javascript>
+    <div class="lbox_close wxapi_form">
+         <h3 id="menu-basic">基础接口</h3>
+         <span class="desc">判断当前客户端是否支持指定JS接口</span>
+         <button class="btn btn_primary" id="checkJsApi">checkJsApi</button>
+         <h3 id="menu-basic">Airkiss测试</h3>
+         <span class="desc">配置Airkiss设备</span>
+         <button class="btn btn_primary" id="airkissConfig">airkiss</button>
+    </div>
 <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<script src="{{ url_for('static', filename='js/airkiss.js') }}"></script>
 <script>
   /*
    * 注意：
@@ -20,9 +28,8 @@
    * 邮件主题：【微信JS-SDK反馈】具体问题
    * 邮件内容说明：用简明的语言描述问题所在，并交代清楚遇到该问题的场景，可附上截屏图片，微信团队会尽快处理你的反馈。
    */
-  jsapi = {{ jsapi }}
+  var jsapi = {{ jsapi }}
   wx.config(jsapi);
 </script>
-<script src="js/airkiss.js"> </script>
-</javascript>
+</body>
 </html>

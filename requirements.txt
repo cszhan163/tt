@@ -8,3 +8,4 @@ wechat-sdk==0.6.4
 mysqlclient==1.3.12
 oauthlib==2.0.7
 paho-mqtt==1.3.1
+Jinja2==2.7.3
