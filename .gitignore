@@ -107,3 +107,7 @@ desktop.ini
 
 # Secrets
 .lokalise_token
+
+#python cached
+
+__pycache__
