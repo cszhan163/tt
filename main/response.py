@@ -62,10 +62,10 @@ def text_resp():
         u'更新菜单': update_menu_setting
     }
     # 状态列表
-    state_commands = {
-        'chat': chat_robot,
-        'express': express_shipment_tracking
-    }
+    # state_commands = {
+    #     'chat': chat_robot,
+    #     'express': express_shipment_tracking
+    # }
     # 匹配指令
     command_match = False
     for key_word in commands:
