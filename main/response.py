@@ -267,7 +267,7 @@ def phone_number():
 def printer_airkiss_command():
     """代开airkiss 页面"""
     airkissURL = app.config['HOST_URL']+"/wechat/printer/airkiss"
-    content = app.config['AIRKISS_URL_TXT'].fromat(airkissURL)
+    content = app.config['AIRKISS_URL_TXT'].format(airkissURL)
     return wechat.response_text(content)
 
 if __name__ == '__main__':
