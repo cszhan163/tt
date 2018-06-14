@@ -28,7 +28,7 @@ def handle_wechat_request():
 def printer_airkiss(openid=None):
     """"""
     if request.method == 'GET':
-        print("start airkiss!!")
+        print("start airkiss!!"+request.url)
         jsapi = get_jsapi_signature_data(request.url)
         #jsapi['jsApiList'] = ['hideAllNonBaseMenuItem']
         jsapi['jsApiList'] = [

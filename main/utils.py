@@ -63,7 +63,7 @@ def init_wechat_sdk():
         redis.set("wechat:jsapi_ticket", jsapi_ticket['jsapi_ticket'], 7000)
         redis.set("wechat:jsapi_ticket_expires_at",
                   jsapi_ticket['jsapi_ticket_expires_at'], 7000)
-    
+
     return wechat
 
 
@@ -99,6 +99,8 @@ def get_jsapi_signature_data(url):
     timestamp = int(time.time())
     noncestr = generate_random_str(16)
     wechat = init_wechat_sdk()
+    jsapi_ticket = redis.get("wechat:jsapi_ticket")
+    print("jsapi_ticket:"+jsapi_ticket)
     signature = wechat.generate_jsapi_signature(timestamp, noncestr, url)
     return {
         "appId": app.config['APP_ID'],
