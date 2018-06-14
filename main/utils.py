@@ -101,7 +101,7 @@ def get_jsapi_signature_data(url):
     wechat = init_wechat_sdk()
     jsapi_ticket = redis.get("wechat:jsapi_ticket")
     print("jsapi_ticket:"+jsapi_ticket)
-    signature = wechat.generate_jsapi_signature(timestamp, noncestr, url)
+    signature = wechat.generate_jsapi_signature(timestamp, noncestr, url,jsapi_ticket)
     return {
         "appId": app.config['APP_ID'],
         "timestamp": timestamp,
